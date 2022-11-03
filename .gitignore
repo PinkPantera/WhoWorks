@@ -5,11 +5,13 @@ SourceCode/WhoWorks/WhoWorks.Domain/obj
 SourceCode/WhoWorks/WhoWorks.Infrastructure/obj
 SourceCode/WhoWorks/WhoWorks.Service/obj
 SourceCode/WhoWorks/WhoWorks.API/obj
+SourceCode/WhoWorks/WhoWorks.WPF/obj
 
 SourceCode/WhoWorks/WhoWorks.Domain/bin
 SourceCode/WhoWorks/WhoWorks.Infrastructure/bin
 SourceCode/WhoWorks/WhoWorks.Service/bin
 SourceCode/WhoWorks/WhoWorks.API/bin
+SourceCode/WhoWorks/WhoWorks.WPF/bin
 
 SourceCode/WhoWorks/.vs
 

@@ -1,0 +1,8 @@
+
+*.v2
+
+SourceCode/WhoWorks/WhoWorks.Domain/obj
+SourceCode/WhoWorks/WhoWorks.Infrastructure/obj
+SourceCode/WhoWorks/WhoWorks.Service/obj
+SourceCode/WhoWorks/WhoWorks.API/obj
+WhoWorks.Domain/obj/Debug/net6.0/WhoWorks.Domain.GlobalUsings.g.cs

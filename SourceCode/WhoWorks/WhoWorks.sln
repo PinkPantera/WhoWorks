@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.API", "WhoWorks.API\WhoWorks.API.csproj", "{3DAFEB74-48E8-4B96-8CBB-0E3D20F1CF91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.API", "WhoWorks.API\WhoWorks.API.csproj", "{AFEFCE28-3190-4978-B83D-251E20696CD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3DAFEB74-48E8-4B96-8CBB-0E3D20F1CF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DAFEB74-48E8-4B96-8CBB-0E3D20F1CF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DAFEB74-48E8-4B96-8CBB-0E3D20F1CF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DAFEB74-48E8-4B96-8CBB-0E3D20F1CF91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFEFCE28-3190-4978-B83D-251E20696CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFEFCE28-3190-4978-B83D-251E20696CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFEFCE28-3190-4978-B83D-251E20696CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFEFCE28-3190-4978-B83D-251E20696CD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {28C04FEC-6523-491A-88CD-A62C46DAFF2C}
+		SolutionGuid = {DEFCB952-D552-4976-AC26-AD0EE93141CE}
 	EndGlobalSection
 EndGlobal

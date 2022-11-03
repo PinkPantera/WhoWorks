@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WhoWorks.WPF.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel()
+        {
+            Title = Resource.MainWindowTitle;
+        }
     }
 }

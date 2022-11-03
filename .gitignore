@@ -11,6 +11,5 @@ SourceCode/WhoWorks/WhoWorks.Infrastructure/bin
 SourceCode/WhoWorks/WhoWorks.Service/bin
 SourceCode/WhoWorks/WhoWorks.API/bin
 
-SourceCode/WhoWorks/.vs/
-SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
-SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
+SourceCode/WhoWorks/.vs
+

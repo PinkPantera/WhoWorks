@@ -5,4 +5,12 @@ SourceCode/WhoWorks/WhoWorks.Domain/obj
 SourceCode/WhoWorks/WhoWorks.Infrastructure/obj
 SourceCode/WhoWorks/WhoWorks.Service/obj
 SourceCode/WhoWorks/WhoWorks.API/obj
-WhoWorks.Domain/obj/Debug/net6.0/WhoWorks.Domain.GlobalUsings.g.cs
+
+SourceCode/WhoWorks/WhoWorks.Domain/bin
+SourceCode/WhoWorks/WhoWorks.Infrastructure/bin
+SourceCode/WhoWorks/WhoWorks.Service/bin
+SourceCode/WhoWorks/WhoWorks.API/bin
+
+SourceCode/WhoWorks/.vs/
+SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
+SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo

@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using WhoWorks.Data.SQLServer;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("WhoWorksDatabase");
+
+builder.Services.AddDbContext<WhoWorksDbContext>
+    (conextBuilder=> conextBuilder.UseSqlServer(connectionString, sqlOption=> { }));
+
 
 // Add services to the container.
 

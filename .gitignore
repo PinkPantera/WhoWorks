@@ -6,13 +6,18 @@ SourceCode/WhoWorks/WhoWorks.Infrastructure/obj
 SourceCode/WhoWorks/WhoWorks.Service/obj
 SourceCode/WhoWorks/WhoWorks.API/obj
 SourceCode/WhoWorks/WhoWorks.WPF/obj
+SourceCode/WhoWorks/WhoWorks.Data.Migrations/obj
+SourceCode/WhoWorks/WhoWorks.Data.SQLServer/obj
 
 SourceCode/WhoWorks/WhoWorks.Domain/bin
 SourceCode/WhoWorks/WhoWorks.Infrastructure/bin
 SourceCode/WhoWorks/WhoWorks.Service/bin
 SourceCode/WhoWorks/WhoWorks.API/bin
 SourceCode/WhoWorks/WhoWorks.WPF/bin
+SourceCode/WhoWorks/WhoWorks.Data.Migrations/bin
+SourceCode/WhoWorks/WhoWorks.Data.SQLServer/bin
 
 SourceCode/WhoWorks/.vs
 
 SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
+

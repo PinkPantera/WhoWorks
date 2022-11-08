@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Data.SQLServer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Data.Migrations", "WhoWorks.Data.Migrations\WhoWorks.Data.Migrations.csproj", "{961B42B4-CBE8-4922-971F-9803BC33E916}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Core", "WhoWorks.Core\WhoWorks.Core.csproj", "{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{961B42B4-CBE8-4922-971F-9803BC33E916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{961B42B4-CBE8-4922-971F-9803BC33E916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{961B42B4-CBE8-4922-971F-9803BC33E916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{1EFB5399-19EA-4882-8171-1795CAD29AFE} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 		{77DFCC9D-9EF4-4E6B-82BC-325E63B1131C} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 		{961B42B4-CBE8-4922-971F-9803BC33E916} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
+		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFCB952-D552-4976-AC26-AD0EE93141CE}

@@ -12,7 +12,7 @@ namespace WhoWorks.Domain.Models
         public string SecondName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string IdentityCard { get; set; }
-        public int AddressId { get; set; }
+        public int? AddressId { get; set; }
         public Address Address { get; set; }
         public int? PhotoId { get; set; }
         public Photo Photo { get; set; }

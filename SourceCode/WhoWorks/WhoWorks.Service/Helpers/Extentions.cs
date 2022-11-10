@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using WhoWorks.Domain.Models;
+﻿using WhoWorks.Domain.Models;
 using WhoWorks.Service.ModelsDto;
 
 namespace WhoWorks.Service.Helpers
@@ -20,8 +14,8 @@ namespace WhoWorks.Service.Helpers
                 SecondName = person.SecondName,
                 DateOfBirth = person.DateOfBirth,
                 IdentityCard = person.IdentityCard,
-                AddressDto = person.Address?.ToAddressDto(),
-                PhotoDto = person.Photo?.ToPhotoDto(),
+                Address = person.Address?.ToAddressDto(),
+                Photo = person.Photo?.ToPhotoDto(),
                 Phone = person.Phone,
                 Email = person.Email
             };
@@ -54,8 +48,8 @@ namespace WhoWorks.Service.Helpers
                 SecondName = personDto.SecondName,
                 DateOfBirth = personDto.DateOfBirth,
                 IdentityCard = personDto.IdentityCard,
-                Address = personDto.AddressDto.ToAddress(),
-                Photo = personDto.PhotoDto?.ToPhoto(),
+                Address = personDto.Address?.ToAddress(),
+                Photo = personDto.Photo?.ToPhoto(),
                 Phone = personDto.Phone,
                 Email = personDto.Email
             };

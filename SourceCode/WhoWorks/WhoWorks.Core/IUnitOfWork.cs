@@ -8,7 +8,7 @@ namespace WhoWorks.Core
 {
     public interface IUnitOfWork
     {
-        IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
-        Task<int> SaveChanges();
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : IEntityBaseModel;
+        Task<int> SaveChanges(CancellationToken cancellationToken = default);
     }
 }

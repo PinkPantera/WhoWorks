@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WhoWorks.WPF.Common;
+﻿using WhoWorks.WPF.Common;
 
 namespace WhoWorks.WPF.ViewModels
 {
     public class ViewModelBase : NotifyPropertyChangedBase
     {
-        private string title;
-
+        private string title =  string.Empty;
 
         public string Title
         {

@@ -9,13 +9,13 @@ namespace WhoWorks.Service.ModelsDto
     public class PersonDto
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string SecondName { get; set; } = string.Empty;
         public DateTime DateOfBirth { get; set; }
-        public string IdentityCard { get; set; }
-        public AddressDto? AddressDto { get; set; }
-        public PhotoDto? PhotoDto { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string IdentityCard { get; set; } = string.Empty;
+        public AddressDto? Address { get; set; }
+        public PhotoDto? Photo { get; set; }
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
     }
 }

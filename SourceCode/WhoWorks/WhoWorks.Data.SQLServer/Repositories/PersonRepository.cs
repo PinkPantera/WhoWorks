@@ -1,11 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WhoWorks.Core;
 using WhoWorks.Domain.Models;
 
 namespace WhoWorks.Data.SQLServer.Repositories
@@ -28,6 +21,45 @@ namespace WhoWorks.Data.SQLServer.Repositories
                 .ToListAsync();
 
             return result;
+        }
+
+        public async override ValueTask<Person?> Update(Person entity)
+        {
+            var person = await dbContext.Persons.FindAsync(entity.Id);
+
+            if (person == null)
+                return null;
+
+            person.FirstName = entity.FirstName;
+            person.SecondName = entity.SecondName;
+            person.DateOfBirth = entity.DateOfBirth;
+            person.IdentityCard = entity.IdentityCard;
+            person.Phone = entity.Phone;
+            person.Email = entity.Email;
+
+            if (entity.Address != null)
+            {
+                if (person.Address == null)
+                {
+                    person.Address = new Address();
+                }
+                person.Address.ShortAddress = entity.Address.ShortAddress;
+                person.Address.Town = entity.Address.Town;
+                person.Address.Region = entity.Address.Region;
+                person.Address.Country = entity.Address.Country;
+                person.Address.CityCode = entity.Address.CityCode;
+            }
+
+            if (entity.Photo != null)
+            {
+                if (person.Photo == null)
+                {
+                    person.Photo = new Photo();
+                }
+                person.Photo.ImageData = entity.Photo.ImageData;
+            }
+
+            return person;
         }
     }
 }

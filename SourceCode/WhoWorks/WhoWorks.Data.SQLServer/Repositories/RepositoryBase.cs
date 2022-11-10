@@ -3,13 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 using WhoWorks.Core;
+using WhoWorks.Domain.Models;
 
 namespace WhoWorks.Data.SQLServer.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : IEntityBaseModel
     {
         protected readonly DbContext context;
 
@@ -18,51 +20,53 @@ namespace WhoWorks.Data.SQLServer.Repositories
             this.context = context;
         }
 
-        public TEntity Add(TEntity entity)
+        public virtual TEntity Add(TEntity entity)
         {
             return context
-                 .Add(entity)
-                 .Entity;
+                  .Add(entity)
+                  .Entity;
         }
 
-        public async Task AddAsync(TEntity entity)
+        public virtual async Task AddAsync(TEntity entity)
         {
-           await context.Set<TEntity>().AddAsync(entity);
+            await context.Set<TEntity>().AddAsync(entity);
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+        public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
             await context.Set<TEntity>().AddRangeAsync(entities);
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public virtual IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return context.Set<TEntity>().Where(predicate);
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await context.Set<TEntity>().ToListAsync();
         }
 
-        public ValueTask<TEntity> GetByIdAsync(int id)
-        {
-            return context.Set<TEntity>().FindAsync(id);
-        }
-
-        public void RemouveRange(IEnumerable<TEntity> entities)
+        public virtual void RemouveRange(IEnumerable<TEntity> entities)
         {
             context.Set<TEntity>().RemoveRange(entities);
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             context.Set<TEntity>().Remove(entity);
         }
 
-        public Task<TEntity> SinglOrDefaulAsync(Expression<Func<TEntity, bool>> predicate)
+        public virtual async Task<TEntity?> SinglOrDefaulAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return context.Set<TEntity>().FirstOrDefaultAsync(predicate);
+            return await context.Set<TEntity>().FirstOrDefaultAsync(predicate);
         }
+
+        public virtual ValueTask<TEntity?> GetByIdAsync(int id)
+        {
+            return context.FindAsync<TEntity>(id);
+        }
+
+        public abstract ValueTask<TEntity?> Update(TEntity entity);
     }
 }

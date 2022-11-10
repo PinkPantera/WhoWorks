@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WhoWorks.Core;
 
@@ -19,14 +20,14 @@ namespace WhoWorks.Data.SQLServer
             this.services = services;
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
+        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : IEntityBaseModel
         {
            return services.GetRequiredService<IRepository<TEntity>>();
         }
 
-        public async Task<int> SaveChanges()
+        public async Task<int> SaveChanges(CancellationToken cancellationToken = default)
         {
-            return await dbContext.SaveChangesAsync();
+            return await dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }

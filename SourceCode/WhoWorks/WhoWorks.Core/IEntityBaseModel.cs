@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WhoWorks.Domain.Models
+namespace WhoWorks.Core
 {
-    public interface IEntityBase
+    public class IEntityBaseModel
     {
         int Id { get; set; }
         DateTime CreatedDate { get; set; }

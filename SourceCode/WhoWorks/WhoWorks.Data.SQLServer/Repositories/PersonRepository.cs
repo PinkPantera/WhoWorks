@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +10,24 @@ using WhoWorks.Domain.Models;
 
 namespace WhoWorks.Data.SQLServer.Repositories
 {
-    public class PersonRepository : IRepository
+    public class PersonRepository : RepositoryBase<Person>
     {
         private readonly WhoWorksDbContext dbContext;
 
         public PersonRepository(WhoWorksDbContext dbContext)
+            :base(dbContext)
         {
             this.dbContext = dbContext;
         }
-        public IUnitOfWork UnitOfWork => dbContext;
 
-        public Person AddPerson(Person person)
+        public async Task<IList<Person>> GetAll()
         {
-            return dbContext.Persons.Add(person).Entity;
+            var result = await dbContext.Persons
+                .AsQueryable()
+                .Where(p => !p.IsDeleted)
+                .ToListAsync();
+
+            return result;
         }
     }
 }

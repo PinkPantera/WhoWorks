@@ -69,10 +69,7 @@ namespace WhoWorks.Data.Migrations.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("AddressId")
+                    b.Property<int?>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
@@ -157,9 +154,7 @@ namespace WhoWorks.Data.Migrations.Migrations
                 {
                     b.HasOne("WhoWorks.Domain.Models.Address", "Address")
                         .WithMany("Persons")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddressId");
 
                     b.HasOne("WhoWorks.Domain.Models.Photo", "Photo")
                         .WithOne("Person")

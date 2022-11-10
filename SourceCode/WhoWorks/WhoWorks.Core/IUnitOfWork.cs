@@ -8,6 +8,7 @@ namespace WhoWorks.Core
 {
     public interface IUnitOfWork
     {
-        int SaveChanges();
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
+        Task<int> SaveChanges();
     }
 }

@@ -10,7 +10,7 @@ using WhoWorks.Domain.Models;
 
 namespace WhoWorks.Data.SQLServer
 {
-    public class WhoWorksDbContext : DbContext, IUnitOfWork
+    public class WhoWorksDbContext : DbContext
     {
         public WhoWorksDbContext(DbContextOptions dbContextOptions)
             :base(dbContextOptions)

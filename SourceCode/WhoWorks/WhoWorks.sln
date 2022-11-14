@@ -3,27 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.API", "WhoWorks.API\WhoWorks.API.csproj", "{AFEFCE28-3190-4978-B83D-251E20696CD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.API", "WhoWorks.API\WhoWorks.API.csproj", "{AFEFCE28-3190-4978-B83D-251E20696CD4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5EB7BB5B-0567-4D19-A86F-8C9271CCDD12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhoWorks", "WhoWorks", "{660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Domain", "WhoWorks.Domain\WhoWorks.Domain.csproj", "{F3BC4B4A-02BA-448A-A834-3652DCF080A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Domain", "WhoWorks.Domain\WhoWorks.Domain.csproj", "{F3BC4B4A-02BA-448A-A834-3652DCF080A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Infrastructure", "WhoWorks.Infrastructure\WhoWorks.Infrastructure.csproj", "{8CD9BBC2-9B68-409C-A519-A045655F7207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Infrastructure", "WhoWorks.Infrastructure\WhoWorks.Infrastructure.csproj", "{8CD9BBC2-9B68-409C-A519-A045655F7207}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Service", "WhoWorks.Service\WhoWorks.Service.csproj", "{698352FB-D29A-48B2-959F-373555B6D011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Service", "WhoWorks.Service\WhoWorks.Service.csproj", "{698352FB-D29A-48B2-959F-373555B6D011}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E57F76BA-EB50-4ACA-B68C-D512D2ED855C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.WPF", "WhoWorks.WPF\WhoWorks.WPF.csproj", "{1EFB5399-19EA-4882-8171-1795CAD29AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.WPF", "WhoWorks.WPF\WhoWorks.WPF.csproj", "{1EFB5399-19EA-4882-8171-1795CAD29AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Data.SQLServer", "WhoWorks.Data.SQLServer\WhoWorks.Data.SQLServer.csproj", "{77DFCC9D-9EF4-4E6B-82BC-325E63B1131C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Data.SQLServer", "WhoWorks.Data.SQLServer\WhoWorks.Data.SQLServer.csproj", "{77DFCC9D-9EF4-4E6B-82BC-325E63B1131C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Data.Migrations", "WhoWorks.Data.Migrations\WhoWorks.Data.Migrations.csproj", "{961B42B4-CBE8-4922-971F-9803BC33E916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Data.Migrations", "WhoWorks.Data.Migrations\WhoWorks.Data.Migrations.csproj", "{961B42B4-CBE8-4922-971F-9803BC33E916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.Core", "WhoWorks.Core\WhoWorks.Core.csproj", "{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoWorks.Core", "WhoWorks.Core\WhoWorks.Core.csproj", "{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonControllerTests", "PersonControllerTests\PersonControllerTests.csproj", "{2AE06865-5CE9-4267-B71B-6DC4E0E43978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE06865-5CE9-4267-B71B-6DC4E0E43978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE06865-5CE9-4267-B71B-6DC4E0E43978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE06865-5CE9-4267-B71B-6DC4E0E43978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE06865-5CE9-4267-B71B-6DC4E0E43978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{77DFCC9D-9EF4-4E6B-82BC-325E63B1131C} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 		{961B42B4-CBE8-4922-971F-9803BC33E916} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 		{CD7C4183-D3C4-481C-BC24-EDAB3C2ED429} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
+		{2AE06865-5CE9-4267-B71B-6DC4E0E43978} = {E57F76BA-EB50-4ACA-B68C-D512D2ED855C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFCB952-D552-4976-AC26-AD0EE93141CE}

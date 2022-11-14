@@ -17,7 +17,6 @@ namespace WhoWorks.Data.SQLServer.Repositories
         {
             var result = await dbContext.Persons
                 .AsQueryable()
-                .Where(p => !p.IsDeleted)
                 .ToListAsync();
 
             return result;

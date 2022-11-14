@@ -47,15 +47,13 @@ namespace WhoWorks.Data.SQLServer.Configurations
             builder
                 .HasOne(person => person.Photo)
                 .WithOne(photo=>photo.Person);
+            builder
+                .HasOne(person => person.Address)
+                .WithOne(address => address.Person);
 
             builder
                .Property(p => p.CreatedDate)
                .HasDefaultValueSql("GETDATE()");
-
-            builder
-                .Property(p => p.IsDeleted)
-                .IsRequired()
-                .HasDefaultValue(false);
 
         }
     }

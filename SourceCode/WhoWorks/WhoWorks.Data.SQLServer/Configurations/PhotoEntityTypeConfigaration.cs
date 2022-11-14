@@ -30,11 +30,6 @@ namespace WhoWorks.Data.SQLServer.Configurations
                 .Property(p => p.CreatedDate)
                 .HasDefaultValueSql("GETDATE()");
 
-            builder
-                .Property(p => p.IsDeleted)
-                .IsRequired()
-                .HasDefaultValue(false);
-
         }
     }
 }

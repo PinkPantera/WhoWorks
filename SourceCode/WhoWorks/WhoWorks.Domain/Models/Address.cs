@@ -14,6 +14,6 @@ namespace WhoWorks.Domain.Models
         public string Country { get; set; } = string.Empty;
         public string CityCode { get; set; } = string.Empty;
 
-        public List<Person>? Persons { get; set; }
+        public Person Person { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 
 namespace WhoWorks.Service.Queries
 {

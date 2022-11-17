@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using System.ComponentModel.Design.Serialization;
 using WhoWorks.Service.Commands;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 using WhoWorks.Service.Queries;
 
 namespace WhoWorks.API.Controllers

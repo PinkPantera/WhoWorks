@@ -7,7 +7,7 @@ using WhoWorks.API.Controllers;
 using WhoWorks.Core;
 using WhoWorks.Domain.Models;
 using WhoWorks.Service.Handlers;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 using WhoWorks.Service.Queries;
 
 namespace PersonControllerTests

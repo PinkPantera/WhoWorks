@@ -1,5 +1,5 @@
 ﻿using WhoWorks.Domain.Models;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 
 namespace WhoWorks.Service.Helpers
 {

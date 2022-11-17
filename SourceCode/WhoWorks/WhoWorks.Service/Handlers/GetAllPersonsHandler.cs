@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WhoWorks.Core;
 using WhoWorks.Domain.Models;
 using WhoWorks.Service.Helpers;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 using WhoWorks.Service.Queries;
 
 namespace WhoWorks.Service.Handlers

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WhoWorks.Service.ModelsDto
+namespace WhoWorks.Domain.ModelsDto
 {
     public class AddressDto
     {

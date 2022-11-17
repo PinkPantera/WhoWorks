@@ -2,7 +2,6 @@
 *.v2
 
 SourceCode/WhoWorks/WhoWorks.Domain/obj
-SourceCode/WhoWorks/WhoWorks.Infrastructure/obj
 SourceCode/WhoWorks/WhoWorks.Service/obj
 SourceCode/WhoWorks/WhoWorks.API/obj
 SourceCode/WhoWorks/WhoWorks.WPF/obj
@@ -10,9 +9,9 @@ SourceCode/WhoWorks/WhoWorks.Data.Migrations/obj
 SourceCode/WhoWorks/WhoWorks.Data.SQLServer/obj
 SourceCode/WhoWorks/WhoWorks.Core/obj
 SourceCode/WhoWorks/PersonControllerTests/obj
+SourceCode/WhoWorks/ClientDataService/obj/
 
 SourceCode/WhoWorks/WhoWorks.Domain/bin
-SourceCode/WhoWorks/WhoWorks.Infrastructure/bin
 SourceCode/WhoWorks/WhoWorks.Service/bin
 SourceCode/WhoWorks/WhoWorks.API/bin
 SourceCode/WhoWorks/WhoWorks.WPF/bin
@@ -20,7 +19,9 @@ SourceCode/WhoWorks/WhoWorks.Data.Migrations/bin
 SourceCode/WhoWorks/WhoWorks.Data.SQLServer/bin
 SourceCode/WhoWorks/WhoWorks.Core/bin
 SourceCode/WhoWorks/PersonControllerTests/bin
+SourceCode/WhoWorks/ClientDataService/bin/
 
 SourceCode/WhoWorks/.vs
 
 SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
+

@@ -11,7 +11,7 @@ using WhoWorks.Core;
 using WhoWorks.Domain.Models;
 using WhoWorks.Service.Commands;
 using WhoWorks.Service.Helpers;
-using WhoWorks.Service.ModelsDto;
+using WhoWorks.Domain.ModelsDto;
 
 namespace WhoWorks.Service.Handlers
 {

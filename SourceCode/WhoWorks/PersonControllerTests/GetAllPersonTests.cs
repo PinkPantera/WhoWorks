@@ -21,7 +21,8 @@ namespace PersonControllerTests
             var listPersonsFromDB = new List<Person>() { new Person { Id = 10 } };
 
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-            unitOfWorkMock.Setup(item => item.GetRepository<Person>().GetAllAsync()).ReturnsAsync(listPersonsFromDB);
+            unitOfWorkMock.Setup(item =>item
+            .GetRepository<Person>().GetAllAsync()).ReturnsAsync(listPersonsFromDB);
 
             var services = new ServiceCollection();
             var serviceConfig = new MediatRServiceConfiguration();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using WhoWorks.WPF.StartupHelpers;
 using WhoWorks.WPF.ViewModels;
 using WhoWorks.WPF.Views;
 
@@ -20,6 +21,7 @@ namespace WhoWorks.WPF
             {
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
+                services.AddPageProvider();
             });
 
             AppHost = hostBuilder.Build();

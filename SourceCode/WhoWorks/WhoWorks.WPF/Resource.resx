@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonHomeTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ButtonPersonsTitle" xml:space="preserve">
+    <value>Persons</value>
+  </data>
+  <data name="ButtonScheduleTitle" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Who Works !!!</value>
+  </data>
+  <data name="PageNotFoundMessage" xml:space="preserve">
+    <value>Page not found</value>
+  </data>
+  <data name="PersonsPageTitle" xml:space="preserve">
+    <value>Persons</value>
+  </data>
+  <data name="SchedulePageTitle" xml:space="preserve">
+    <value>Schedule</value>
   </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿using WhoWorks.Domain.Models;
 using WhoWorks.Domain.ModelsDto;
 
-namespace WhoWorks.Service.Helpers
+namespace WhoWorks.Domain
 {
     public static class Extentions
     {

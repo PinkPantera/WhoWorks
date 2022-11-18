@@ -6,6 +6,32 @@
              xmlns:local="clr-namespace:WhoWorks.WPF.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--#region DataTemplate -->
+        <DataTemplate x:Key="PersonControlTemplate">
+            <Grid Background="#f2f9fa">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding SecondName}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Phone}"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Email}"/>
+                <TextBlock Grid.Row="0" Grid.Column="4" Text="{Binding IdentityCard}"/>
+                <TextBlock Grid.Row="0" Grid.Column="5" Text="{Binding Address}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,7 +39,10 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" 
-                   Text="{Binding Title}"/>
+        <TextBlock Grid.Row="0" />
+
+        <ListBox Grid.Row="1" BorderThickness="0" Padding="0" 
+                   ItemTemplate="{StaticResource PersonControlTemplate}"
+                 ItemsSource="{Binding Persons}"/>
     </Grid>
 </UserControl>

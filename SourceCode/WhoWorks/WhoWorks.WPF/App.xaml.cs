@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using ClientDataService.Interfaces;
+using ClientDataService.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 using WhoWorks.WPF.StartupHelpers;
@@ -22,6 +24,7 @@ namespace WhoWorks.WPF
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddPageProvider();
+                services.AddScoped<IPersonService, PersonService>();
             });
 
             AppHost = hostBuilder.Build();

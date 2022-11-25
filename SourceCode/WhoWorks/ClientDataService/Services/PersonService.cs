@@ -25,7 +25,8 @@ namespace ClientDataService.Services
         {
             IEnumerable<PersonModel> list;
             using var httpClient = new HttpClient();
-            list = await httpClient.GetAsyncM<PersonModel>("https://localhost:44383/api/Person/GetAll");
+            list = await httpClient.GetAsync<List<PersonModel>>("https://localhost:44383/api/Person/GetAll");
+            
 
             return list;
         }

@@ -20,11 +20,16 @@ namespace WhoWorks.WPF.ViewModels
         {
             this.personService = personService;
 
-           LoadPersons();
+          
         }
 
         public ObservableCollection<PersonModel> Persons { get; private set; } 
             = new ObservableCollection<PersonModel>();
+
+        public async override void Refreshe()
+        {
+            await LoadPersons();
+        }
 
         private async Task LoadPersons()
         {

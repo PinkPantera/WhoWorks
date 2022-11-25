@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
+﻿using System.Net.Http.Json;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ClientDataService.Extentions
 {
     public static class HttpClientExtensions
     {
-        public static async Task<List<T>> GetAsyncM<T>(this HttpClient httpClient, string uri)
+        public static async Task<T?> GetAsync<T>(this HttpClient httpClient, string uri)
         {
             try
             {
-                return await httpClient.GetFromJsonAsync<List<T>>(uri);
+                return await httpClient.GetFromJsonAsync<T>(uri);
             }
             catch (HttpRequestException) // Non success
             {
@@ -29,7 +24,7 @@ namespace ClientDataService.Extentions
                 Console.WriteLine("Invalid JSON.");
             }
 
-            return null;
+            return default;
         }
     }
 }

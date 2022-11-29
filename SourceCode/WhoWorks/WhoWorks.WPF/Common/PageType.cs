@@ -12,6 +12,7 @@ namespace WhoWorks.WPF.Common
         Persons,
         About,
         Schedule,
+        Settings,
 
         Uknown
     }

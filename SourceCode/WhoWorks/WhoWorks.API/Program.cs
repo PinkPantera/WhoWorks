@@ -17,7 +17,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IRepository<Person>, PersonRepository>();
 
 builder.Services.AddMediatR(typeof(MediatREntrypoint).Assembly);
-
+builder.Services.AddHealthChecks();
 // Add services to the container.
 
 builder.Services.AddControllers();

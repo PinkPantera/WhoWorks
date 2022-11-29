@@ -13,13 +13,17 @@ namespace WhoWorks.WPF.Common
             {
                 { PageType.Home, Resource.HomePageTitle },
                 { PageType.Persons, Resource.PersonsPageTitle },
+                { PageType.Settings, Resource.SettingsPageTitle},
                 { PageType.Uknown, Resource.PageNotFoundMessage }
-
             };
 
         public static string GetPageTitle(PageType pageType)
         {
-            pages.TryGetValue(pageType, out string title);
+            var result = pages.TryGetValue(pageType, out string title);
+
+            if (!result)
+                return  Resource.PageTitleNotDefined;
+
             return title;
         }
     }

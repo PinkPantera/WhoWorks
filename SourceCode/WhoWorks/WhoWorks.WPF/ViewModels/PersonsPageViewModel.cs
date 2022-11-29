@@ -11,7 +11,7 @@ using WhoWorks.WPF.Interfaces;
 
 namespace WhoWorks.WPF.ViewModels
 {
-    public class PersonsPageViewModel : ViewModelBasePage, IPage
+    public class PersonsPageViewModel : ViewModelBasePage, IPage, IAsyncInitialization
     {
         private readonly IPersonService personService;
 
@@ -19,17 +19,13 @@ namespace WhoWorks.WPF.ViewModels
            : base(PageType.Persons)
         {
             this.personService = personService;
-
-          
+            Initialization = LoadPersons();
         }
 
         public ObservableCollection<PersonModel> Persons { get; private set; } 
             = new ObservableCollection<PersonModel>();
 
-        public async override void Refreshe()
-        {
-            await LoadPersons();
-        }
+        public Task Initialization { get; }
 
         private async Task LoadPersons()
         {

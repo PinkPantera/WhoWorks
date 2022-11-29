@@ -126,6 +126,9 @@
   <data name="ButtonScheduleTitle" xml:space="preserve">
     <value>Schedule</value>
   </data>
+  <data name="ButtonSettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="HomePageTitle" xml:space="preserve">
     <value>Home</value>
   </data>
@@ -135,10 +138,16 @@
   <data name="PageNotFoundMessage" xml:space="preserve">
     <value>Page not found</value>
   </data>
+  <data name="PageTitleNotDefined" xml:space="preserve">
+    <value>Page title not defined</value>
+  </data>
   <data name="PersonsPageTitle" xml:space="preserve">
     <value>Persons</value>
   </data>
   <data name="SchedulePageTitle" xml:space="preserve">
     <value>Schedule</value>
+  </data>
+  <data name="SettingsPageTitle" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>

@@ -2,7 +2,10 @@
 using ClientDataService.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Windows;
+using WhoWorks.WPF.ApiSettings;
+using WhoWorks.WPF.Interfaces;
 using WhoWorks.WPF.StartupHelpers;
 using WhoWorks.WPF.ViewModels;
 using WhoWorks.WPF.Views;
@@ -19,8 +22,11 @@ namespace WhoWorks.WPF
         {
             IHostBuilder hostBuilder = Host.CreateDefaultBuilder();
 
+
             hostBuilder.ConfigureServices((IServiceCollection services) =>
             {
+                services.AddSingleton<ISettingsManager, DefaultSettingsManager>();
+                services.AddSingleton<IWebApiSettings, WebApiSettings>();
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddPageProvider();

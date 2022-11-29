@@ -88,6 +88,15 @@ namespace WhoWorks.WPF {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string ButtonSettingsTitle {
+            get {
+                return ResourceManager.GetString("ButtonSettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string HomePageTitle {
@@ -115,6 +124,15 @@ namespace WhoWorks.WPF {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Page title not defined.
+        /// </summary>
+        public static string PageTitleNotDefined {
+            get {
+                return ResourceManager.GetString("PageTitleNotDefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Persons.
         /// </summary>
         public static string PersonsPageTitle {
@@ -129,6 +147,15 @@ namespace WhoWorks.WPF {
         public static string SchedulePageTitle {
             get {
                 return ResourceManager.GetString("SchedulePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsPageTitle {
+            get {
+                return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
             }
         }
     }

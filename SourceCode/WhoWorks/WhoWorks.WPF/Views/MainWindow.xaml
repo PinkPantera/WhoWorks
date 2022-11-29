@@ -28,6 +28,8 @@
                     Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Persons}"/>
             <Button Content="{x:Static local:Resource.ButtonScheduleTitle}"
                     Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Schedule}"/>
+            <Button Content="{x:Static local:Resource.ButtonSettingsTitle}"
+                    Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Settings}"/>
 
 
         </StackPanel>

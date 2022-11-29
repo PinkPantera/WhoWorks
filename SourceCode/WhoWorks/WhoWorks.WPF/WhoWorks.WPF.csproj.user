@@ -19,6 +19,9 @@
     <Compile Update="Views\PersonsPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SettingsPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resources\DataTemplate.xaml">
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PersonsPageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SettingsPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

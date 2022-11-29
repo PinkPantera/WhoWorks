@@ -21,6 +21,7 @@ namespace WhoWorks.WPF.StartupHelpers
             services.AddTransient<EmptyPageVeiwModel>();
             services.AddTransient<HomePageViewModel>();
             services.AddTransient<PersonsPageViewModel>();
+            services.AddTransient<SettingsPageViewModel>();
 
             services.AddTransient<ServicePageResolver>(serviceProvider => pageType =>
             {
@@ -30,6 +31,8 @@ namespace WhoWorks.WPF.StartupHelpers
                         return serviceProvider.GetService<HomePageViewModel>();
                     case PageType.Persons:
                         return serviceProvider.GetService<PersonsPageViewModel>();
+                   case PageType.Settings:
+                        return serviceProvider.GetService<SettingsPageViewModel>();
 
                     default: 
                         return serviceProvider.GetRequiredService<EmptyPageVeiwModel>();

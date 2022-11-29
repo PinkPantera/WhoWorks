@@ -21,7 +21,6 @@ namespace WhoWorks.WPF.ViewModels
 
         public virtual void Refreshe()
         {
-           
         }
     }
 }

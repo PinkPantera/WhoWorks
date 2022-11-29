@@ -11,6 +11,13 @@ namespace ClientDataService.Services
 {
     public class PersonService : IPersonService
     {
+        private readonly IWebApiSettings webApiSettings;
+
+        public PersonService(IWebApiSettings webApiSettings)
+        {
+            this.webApiSettings = webApiSettings;
+        }
+
         public Task<PersonModel> CreateAsync(PersonModel personModel)
         {
             throw new NotImplementedException();
@@ -25,8 +32,8 @@ namespace ClientDataService.Services
         {
             IEnumerable<PersonModel> list;
             using var httpClient = new HttpClient();
-            list = await httpClient.GetAsync<List<PersonModel>>("https://localhost:44383/api/Person/GetAll");
-            
+            //list = await httpClient.GetAsync<List<PersonModel>>("https://localhost:44383/api/Person/GetAll");
+            list = await httpClient.GetAsync<List<PersonModel>>($"{webApiSettings.GetUrl}/Person/GetAll");
 
             return list;
         }

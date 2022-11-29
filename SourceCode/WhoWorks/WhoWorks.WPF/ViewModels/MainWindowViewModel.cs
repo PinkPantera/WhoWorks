@@ -13,7 +13,7 @@ namespace WhoWorks.WPF.ViewModels
     {
         private readonly IPageProvider pageProvider;
         private IPage selectedPage;
-       
+
         public MainWindowViewModel(IPageProvider pageProvider)
         {
             Title = Resource.MainWindowTitle;
@@ -35,13 +35,19 @@ namespace WhoWorks.WPF.ViewModels
 
 
         #region Command
-        private void MenuCommandExecute(PageType pageType)
+        private async void MenuCommandExecute(PageType pageType)
         {
             if (pageType == PageType.Uknown || SelectedPage.PageType == pageType)
-             return;
+                return;
 
             SelectedPage = pageProvider.GetPage(pageType);
-            SelectedPage.Refreshe();
+            var pageWithAsyncInitialization = SelectedPage as IAsyncInitialization;
+
+            if (pageWithAsyncInitialization != null
+                && pageWithAsyncInitialization.Initialization != null)
+            {
+                await pageWithAsyncInitialization.Initialization;
+            }
         }
 
         #endregion

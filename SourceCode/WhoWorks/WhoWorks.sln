@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSQL", "DataSQL", "{B6B2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D6229AA1-729A-436E-A135-963E7924516E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWorks.WpfCustomControlLibrary", "WhoWorks.WpfCustomControlLibrary\WhoWorks.WpfCustomControlLibrary.csproj", "{913030E8-CDAE-4A87-8D57-3C879240F9DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{929E53B3-EC8A-45EE-9CD2-F0CA3DF45374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{929E53B3-EC8A-45EE-9CD2-F0CA3DF45374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{929E53B3-EC8A-45EE-9CD2-F0CA3DF45374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{913030E8-CDAE-4A87-8D57-3C879240F9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913030E8-CDAE-4A87-8D57-3C879240F9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913030E8-CDAE-4A87-8D57-3C879240F9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913030E8-CDAE-4A87-8D57-3C879240F9DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{929E53B3-EC8A-45EE-9CD2-F0CA3DF45374} = {3E680956-0D61-4EE2-A5AA-2A42265F3ABD}
 		{B6B25042-4871-47FF-8D81-AE733E6ABAC6} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
 		{D6229AA1-729A-436E-A135-963E7924516E} = {660FCA2D-A9C8-4CA3-8CCD-BF913175CE58}
+		{913030E8-CDAE-4A87-8D57-3C879240F9DD} = {3E680956-0D61-4EE2-A5AA-2A42265F3ABD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFCB952-D552-4976-AC26-AD0EE93141CE}

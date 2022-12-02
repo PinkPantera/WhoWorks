@@ -43,7 +43,7 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Background="Aqua" 
-                           TextWrapping="Wrap" Width="300"
+                           TextWrapping="Wrap" Width="300" 
                            Text="{Binding CheckConnectionResult}"/>
 
             </Grid>

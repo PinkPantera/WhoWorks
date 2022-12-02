@@ -9,7 +9,8 @@ SourceCode/WhoWorks/WhoWorks.Data.Migrations/obj
 SourceCode/WhoWorks/WhoWorks.Data.SQLServer/obj
 SourceCode/WhoWorks/WhoWorks.Core/obj
 SourceCode/WhoWorks/PersonControllerTests/obj
-SourceCode/WhoWorks/ClientDataService/obj/
+SourceCode/WhoWorks/ClientDataService/obj
+SourceCode/WhoWorks/WhoWorks.WpfCustomControlLibrary/obj
 
 SourceCode/WhoWorks/WhoWorks.Domain/bin
 SourceCode/WhoWorks/WhoWorks.Service/bin
@@ -20,8 +21,9 @@ SourceCode/WhoWorks/WhoWorks.Data.SQLServer/bin
 SourceCode/WhoWorks/WhoWorks.Core/bin
 SourceCode/WhoWorks/PersonControllerTests/bin
 SourceCode/WhoWorks/ClientDataService/bin/
+SourceCode/WhoWorks/WhoWorks.WpfCustomControlLibrary/bin
+
 
 SourceCode/WhoWorks/.vs
 
 SourceCode/WhoWorks/.vs/WhoWorks/v17/.suo
-

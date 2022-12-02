@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhoWorks.WPF"
         xmlns:common ="clr-namespace:WhoWorks.WPF.Common"
+        xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.Buttons;assembly=WhoWorks.WpfCustomControlLibrary"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WhoWorks.WPF;component/Resources/DataTemplate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/ImageResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/SystemStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -22,14 +26,33 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="{x:Static local:Resource.ButtonHomeTitle}"
-                    Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Home}"/>
-            <Button Content="{x:Static local:Resource.ButtonPersonsTitle}"
-                    Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Persons}"/>
-            <Button Content="{x:Static local:Resource.ButtonScheduleTitle}"
-                    Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Schedule}"/>
-            <Button Content="{x:Static local:Resource.ButtonSettingsTitle}"
-                    Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Settings}"/>
+            <customControls:IconTextButton 
+                Style="{StaticResource MenuButtonStyle}"
+                Margin="0 0 5 0"
+                Content="{x:Static local:Resource.ButtonHomeTitle}"
+                IconSource="{DynamicResource AppartementsIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Home}"/>
+            
+            <customControls:IconTextButton
+                Style="{StaticResource MenuButtonStyle}"
+                Margin="0 0 5 0"
+                Content="{x:Static local:Resource.ButtonPersonsTitle}"
+                IconSource="{DynamicResource PersonsIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Persons}"/>
+            
+            <customControls:IconTextButton 
+                Style="{StaticResource MenuButtonStyle}"
+                Margin="0 0 5 0"
+                Content="{x:Static local:Resource.ButtonScheduleTitle}"
+                IconSource="{DynamicResource PlanningIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Schedule}"/>
+            
+            <customControls:IconTextButton 
+                Style="{StaticResource MenuButtonStyle}"
+                Margin="0 0 5 0"
+                Content="{x:Static local:Resource.ButtonSettingsTitle}"
+                IconSource="{DynamicResource SettingsIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Settings}"/>
 
 
         </StackPanel>

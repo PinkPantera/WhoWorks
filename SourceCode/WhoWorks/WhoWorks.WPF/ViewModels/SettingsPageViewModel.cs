@@ -1,9 +1,19 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Net.NetworkInformation;
+using System.Security.Policy;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WhoWorks.Core.Diagnostic;
+using WhoWorks.WPF.ApiSettings;
 using WhoWorks.WPF.Common;
 using WhoWorks.WPF.Interfaces;
 
@@ -49,18 +59,20 @@ namespace WhoWorks.WPF.ViewModels
         {
             CheckConnectionResult = "Try to Connect...";
 
-            await DalayAndReturnAsync(10);
+            var requestUri = $"{WebApiUrl}/health";
+            try
+            {
+                var serverHealthInformation = await ApiServerDiagnostic.GetServerHealthInformationAsync(requestUri);
+                CheckConnectionResult = serverHealthInformation.Status;
 
-            CheckConnectionResult = "Successful";
-
+            }
+            catch(Exception ex)
+            {
+                CheckConnectionResult = ex.Message;
+            }
         }
+
+
         #endregion
-
-        private async Task<int> DalayAndReturnAsync(int value)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(value));
-            return value;
-        }
-
     }
 }

@@ -25,7 +25,7 @@ namespace WhoWorks.WPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44383/api")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44383")]
         public string WebApiUrl {
             get {
                 return ((string)(this["WebApiUrl"]));

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="WebApiUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://localhost:44383/api</Value>
+      <Value Profile="(Default)">https://localhost:44383</Value>
     </Setting>
   </Settings>
 </SettingsFile>

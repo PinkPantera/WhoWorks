@@ -12,7 +12,7 @@ namespace WhoWorks.WPF.ApiSettings
     {
         public WebApiSettings(ISettingsManager settingsManager)
         {
-            GetUrl = settingsManager.WebApiUrl;
+            GetUrl = $"{settingsManager.WebApiUrl}/api";
         }
 
         public string GetUrl { get; }

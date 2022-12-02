@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClientDataService\ClientDataService.csproj" />
+    <ProjectReference Include="..\WhoWorks.Core\WhoWorks.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

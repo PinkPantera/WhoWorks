@@ -29,11 +29,21 @@
                 <TextBlock Grid.Row="0" Grid.Column="0"
                            Text="WebApiUrl"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Width="300" 
-                         Text="{Binding WebApiUrl, Mode=TwoWay}"/>
+                         Text="{Binding WebApiUrl, Mode=TwoWay}" VerticalAlignment="Top" IsEnabled="False"/>
 
-                <Button Grid.Row="0" Grid.Column="2" 
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" >
+                    <Button 
                         Content="Check connection" Command="{Binding CheckConnectionCommand}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1"
+                    <Button 
+                        Content="Edit connection" Command="{Binding CheckConnectionCommand}"/>
+                    <Button DockPanel.Dock="Right" HorizontalAlignment="Right"
+                        Content="Ok" Command="{Binding CheckConnectionCommand}"/>
+                    <Button HorizontalAlignment="Right"
+                        Content="Cancel" Command="{Binding CheckConnectionCommand}"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Background="Aqua" 
+                           TextWrapping="Wrap" Width="300"
                            Text="{Binding CheckConnectionResult}"/>
 
             </Grid>

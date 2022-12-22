@@ -8,7 +8,7 @@
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\SystemStyle.xaml">
+    <Page Update="Themes\DataTemplates.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

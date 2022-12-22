@@ -22,17 +22,20 @@ namespace WhoWorks.WPF.StartupHelpers
             services.AddTransient<HomePageViewModel>();
             services.AddTransient<PersonsPageViewModel>();
             services.AddTransient<SettingsPageViewModel>();
+            services.AddTransient<SchedulePageViewModel>();
 
             services.AddTransient<ServicePageResolver>(serviceProvider => pageType =>
             {
                 switch (pageType)
                 {
-                    case PageType.Home:
+                    case PageType.Main:
                         return serviceProvider.GetService<HomePageViewModel>();
                     case PageType.Persons:
                         return serviceProvider.GetService<PersonsPageViewModel>();
                    case PageType.Settings:
                         return serviceProvider.GetService<SettingsPageViewModel>();
+                    case PageType.Schedule:
+                        return serviceProvider.GetService<SchedulePageViewModel>();
 
                     default: 
                         return serviceProvider.GetRequiredService<EmptyPageVeiwModel>();

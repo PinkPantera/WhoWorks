@@ -3,18 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
         xmlns:local="clr-namespace:WhoWorks.WPF"
         xmlns:common ="clr-namespace:WhoWorks.WPF.Common"
         xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.Buttons;assembly=WhoWorks.WpfCustomControlLibrary"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="450" Width="800">
+        Title="{Binding Title}" Height="750" Width="1300">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WPF;component/Resources/DataTemplate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WPF;component/Resources/DataSourceTemplate.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/Generic.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/ImageResources.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/SystemStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -29,9 +30,9 @@
             <customControls:IconTextButton 
                 Style="{StaticResource MenuButtonStyle}"
                 Margin="0 0 5 0"
-                Content="{x:Static local:Resource.ButtonHomeTitle}"
-                IconSource="{DynamicResource AppartementsIcon}"
-                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Home}"/>
+                Content="{x:Static local:Resource.ButtonMainPageTitle}"
+                IconSource="{DynamicResource MainPageIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Main}"/>
             
             <customControls:IconTextButton
                 Style="{StaticResource MenuButtonStyle}"
@@ -39,7 +40,14 @@
                 Content="{x:Static local:Resource.ButtonPersonsTitle}"
                 IconSource="{DynamicResource PersonsIcon}"
                 Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Persons}"/>
-            
+
+            <customControls:IconTextButton 
+                Style="{StaticResource MenuButtonStyle}"
+                Margin="0 0 5 0"
+                Content="{x:Static local:Resource.ButtonBuildingsTitle}"
+                IconSource="{DynamicResource BuildingsIcon}"
+                Command="{Binding MenuCommand}" CommandParameter="{x:Static common:PageType.Buildings}"/>
+
             <customControls:IconTextButton 
                 Style="{StaticResource MenuButtonStyle}"
                 Margin="0 0 5 0"

@@ -39,10 +39,10 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" />
+        <TextBlock Grid.Row="0" Text="{Binding ErrorInformation}"/>
 
         <ListBox Grid.Row="1" BorderThickness="0" Padding="0" 
-                   ItemTemplate="{StaticResource PersonControlTemplate}"
+                 ItemTemplate="{StaticResource PersonControlTemplate}"
                  ItemsSource="{Binding Persons}"/>
     </Grid>
 </UserControl>

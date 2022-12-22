@@ -61,11 +61,29 @@ namespace WhoWorks.WPF {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Buildings.
         /// </summary>
-        public static string ButtonHomeTitle {
+        public static string BuildingsPageTitle {
             get {
-                return ResourceManager.GetString("ButtonHomeTitle", resourceCulture);
+                return ResourceManager.GetString("BuildingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buildings.
+        /// </summary>
+        public static string ButtonBuildingsTitle {
+            get {
+                return ResourceManager.GetString("ButtonBuildingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main.
+        /// </summary>
+        public static string ButtonMainPageTitle {
+            get {
+                return ResourceManager.GetString("ButtonMainPageTitle", resourceCulture);
             }
         }
         
@@ -97,11 +115,11 @@ namespace WhoWorks.WPF {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Main.
         /// </summary>
-        public static string HomePageTitle {
+        public static string MainPageTitle {
             get {
-                return ResourceManager.GetString("HomePageTitle", resourceCulture);
+                return ResourceManager.GetString("MainPageTitle", resourceCulture);
             }
         }
         
@@ -138,6 +156,15 @@ namespace WhoWorks.WPF {
         public static string PersonsPageTitle {
             get {
                 return ResourceManager.GetString("PersonsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Residence.
+        /// </summary>
+        public static string ResidenceTitle {
+            get {
+                return ResourceManager.GetString("ResidenceTitle", resourceCulture);
             }
         }
         

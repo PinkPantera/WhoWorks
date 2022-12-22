@@ -8,10 +8,11 @@ namespace WhoWorks.WPF.Common
 {
     public enum PageType
     {
-        Home,
+        Main,
         Persons,
         About,
         Schedule,
+        Buildings,
         Settings,
 
         Uknown

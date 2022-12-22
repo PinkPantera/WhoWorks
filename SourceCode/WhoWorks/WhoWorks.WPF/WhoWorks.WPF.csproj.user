@@ -19,12 +19,15 @@
     <Compile Update="Views\PersonsPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SchedulePageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SettingsPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Resources\DataTemplate.xaml">
+    <Page Update="Resources\DataSourceTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EmptyPageView.xaml">
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PersonsPageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SchedulePageView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SettingsPageView.xaml">

@@ -28,11 +28,10 @@ namespace ClientDataService.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<PersonModel>> GetAllAsync()
+        public async Task<IList<PersonModel>> GetAllAsync()
         {
-            IEnumerable<PersonModel> list;
+            IList<PersonModel> list;
             using var httpClient = new HttpClient();
-            //list = await httpClient.GetAsync<List<PersonModel>>("https://localhost:44383/api/Person/GetAll");
             list = await httpClient.GetAsync<List<PersonModel>>($"{webApiSettings.GetUrl}/Person/GetAll");
 
             return list;

@@ -18,7 +18,7 @@ namespace WhoWorks.WPF.ViewModels
         {
             Title = Resource.MainWindowTitle;
             this.pageProvider = pageProvider;
-            SelectedPage = pageProvider.GetPage(PageType.Home);
+            SelectedPage = pageProvider.GetPage(PageType.Main);
             MenuCommand = new RalayCommand<PageType>(MenuCommandExecute);
         }
 

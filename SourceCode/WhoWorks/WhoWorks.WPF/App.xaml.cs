@@ -31,6 +31,7 @@ namespace WhoWorks.WPF
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddPageProvider();
                 services.AddScoped<IPersonService, PersonService>();
+                services.AddScoped<IResidenceService, ResidenceService>();
             });
 
             AppHost = hostBuilder.Build();

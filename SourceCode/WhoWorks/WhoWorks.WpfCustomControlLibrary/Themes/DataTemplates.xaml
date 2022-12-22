@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:customBtns="clr-namespace:WhoWorks.WpfCustomControlLibrary.Buttons" 
+                    xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.CustomControls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Themes/Generic.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="CalendarItemTemplate">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            <customControls:CustomContentCalendar Style="{StaticResource ItemCalendarStyle}"
+                Title="{Binding NumberOfDay}" Body="{Binding Content}" HoursAm="{Binding HoursAm}" HoursPm="{Binding HoursPm}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ResidenceControlTemplate" >
+        <TextBlock Grid.Column="1" Text="{Binding Name}" Padding="5 2 8 2" FontSize="14"/>
+        
+    </DataTemplate>
+
+    <Style x:Key="_ListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="_Border"
+                                Padding="2"
+                                SnapsToDevicePixels="true">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="_Border" Property="Background" Value="DarkSlateGray"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

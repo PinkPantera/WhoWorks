@@ -11,10 +11,12 @@ namespace WhoWorks.WPF.Common
         private static readonly Dictionary<PageType, string> pages
             = new()
             {
-                { PageType.Home, Resource.HomePageTitle },
+                { PageType.Main, Resource.MainPageTitle },
                 { PageType.Persons, Resource.PersonsPageTitle },
+                { PageType.Buildings, Resource.BuildingsPageTitle },
                 { PageType.Settings, Resource.SettingsPageTitle},
-                { PageType.Uknown, Resource.PageNotFoundMessage }
+                { PageType.Schedule, Resource.SchedulePageTitle},
+                { PageType.Uknown, Resource.PageNotFoundMessage },
             };
 
         public static string GetPageTitle(PageType pageType)

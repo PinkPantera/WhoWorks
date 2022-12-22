@@ -9,5 +9,9 @@
                  UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/staff-80.png"/>
     <BitmapImage x:Key="PlanningIcon"
                  UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/planning-80.png"/>
+    <BitmapImage x:Key="BuildingsIcon"
+                 UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/ville-80.png"/>
+    <BitmapImage x:Key="MainPageIcon"
+                 UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/accueil-80.png"/>
 
 </ResourceDictionary>

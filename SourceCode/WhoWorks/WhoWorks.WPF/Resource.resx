@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonHomeTitle" xml:space="preserve">
-    <value>Home</value>
+  <data name="BuildingsPageTitle" xml:space="preserve">
+    <value>Buildings</value>
+  </data>
+  <data name="ButtonBuildingsTitle" xml:space="preserve">
+    <value>Buildings</value>
+  </data>
+  <data name="ButtonMainPageTitle" xml:space="preserve">
+    <value>Main</value>
   </data>
   <data name="ButtonPersonsTitle" xml:space="preserve">
     <value>Persons</value>
@@ -129,8 +135,8 @@
   <data name="ButtonSettingsTitle" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="HomePageTitle" xml:space="preserve">
-    <value>Home</value>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>Main</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Who Works !!!</value>
@@ -143,6 +149,9 @@
   </data>
   <data name="PersonsPageTitle" xml:space="preserve">
     <value>Persons</value>
+  </data>
+  <data name="ResidenceTitle" xml:space="preserve">
+    <value>Residence</value>
   </data>
   <data name="SchedulePageTitle" xml:space="preserve">
     <value>Schedule</value>

@@ -11,7 +11,7 @@ namespace WhoWorks.WPF.ViewModels
     public class HomePageViewModel : ViewModelBasePage, IPage
     {
         public HomePageViewModel()
-            :base(PageType.Home)
+            :base(PageType.Main)
         {
 
         }

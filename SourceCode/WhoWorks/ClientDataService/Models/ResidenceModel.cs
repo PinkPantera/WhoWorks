@@ -8,6 +8,7 @@ namespace ClientDataService.Models
 {
     public class ResidenceModel
     {
+        public int Id { get;set;}
         public string Name { get; set; }
         public string Adress { get; set; }
         public string Phone1 { get; set; }

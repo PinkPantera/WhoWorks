@@ -32,7 +32,9 @@ namespace WhoWorks.WPF
                 services.AddPageProvider();
                 services.AddScoped<IPersonService, PersonService>();
                 services.AddScoped<IResidenceService, ResidenceService>();
+                services.AddScoped<IScheduleService, ScheduleService>();
             });
+
 
             AppHost = hostBuilder.Build();
         }

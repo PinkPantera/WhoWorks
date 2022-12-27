@@ -22,10 +22,9 @@ namespace WhoWorks.WPF.Common
             get => dayOfWeek;
             set => SetProprty(ref dayOfWeek, value);
         }
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
         public int NumberOfDay { get; set; }
-        public string Content { get; set; }
-        public string HoursAm { get; set; }
-        public string HoursPm { get; set; }
+        public List<AssignedHours> Hours { get; set; }
+        public string? Content { get; set; }
     }
 }

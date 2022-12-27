@@ -8,7 +8,7 @@
         xmlns:common ="clr-namespace:WhoWorks.WPF.Common"
         xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.Buttons;assembly=WhoWorks.WpfCustomControlLibrary"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="750" Width="1300">
+        Title="{Binding Title}" Height="750" Width="1350">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

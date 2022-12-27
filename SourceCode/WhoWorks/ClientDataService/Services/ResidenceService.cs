@@ -26,16 +26,16 @@ namespace ClientDataService.Services
         public Task<IList<ResidenceModel>> GetAllAsync()
         {
             IList<ResidenceModel> list = new List<ResidenceModel>();
-            list.Add(new ResidenceModel { Name = "Auteuil", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Bagatelle", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Breteuil", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Chaillot", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Concorde", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Dauphine", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Etoile", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Foch", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            list.Add(new ResidenceModel { Name = "Saint Germain dés Près", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
-            
+            list.Add(new ResidenceModel { Id = 1, Name = "Auteuil", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 2, Name = "Bagatelle", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 3, Name = "Breteuil", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 4, Name = "Chaillot", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 5, Name = "Concorde", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 6, Name = "Dauphine", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 7, Name = "Etoile", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 8, Name = "Foch", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+            list.Add(new ResidenceModel { Id = 9, Name = "Saint Germain dés Près", Phone1 = "01 39 54 40 26", Phone2 = "06 60 03 63 28" });
+
             return Task.FromResult(list);
         }
 

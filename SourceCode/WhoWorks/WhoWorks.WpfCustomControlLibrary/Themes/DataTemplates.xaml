@@ -10,13 +10,20 @@
     <DataTemplate x:Key="CalendarItemTemplate">
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <customControls:CustomContentCalendar Style="{StaticResource ItemCalendarStyle}"
-                Title="{Binding NumberOfDay}" Body="{Binding Content}" HoursAm="{Binding HoursAm}" HoursPm="{Binding HoursPm}"/>
+                Title="{Binding NumberOfDay}" Body="{Binding Content}" Hours="{Binding Hours}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="ResidenceControlTemplate" >
-        <TextBlock Grid.Column="1" Text="{Binding Name}" Padding="5 2 8 2" FontSize="14"/>
-        
+        <TextBlock Text="{Binding Name}" Padding="5 2 8 2" FontSize="14"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HoursDataTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding PersonName}"/>
+            <TextBlock Text="{Binding AssignedHours}"/>
+            <Button Content="Remove"/>
+        </StackPanel>
     </DataTemplate>
 
     <Style x:Key="_ListBoxItemStyle" TargetType="ListBoxItem">

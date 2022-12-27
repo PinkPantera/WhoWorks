@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.CustomControls;assembly=WhoWorks.WpfCustomControlLibrary"
              xmlns:resx ="clr-namespace:WhoWorks.WPF"
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -15,7 +16,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         <!--#region DataTemplate -->
-    
+
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -28,18 +29,26 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource ResidenceTitleStyle}"
-                   Text="{x:Static resx:Resource.ResidenceTitle}"/>
-
-        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource DataCalendarStyle}"
+        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource DataCalendarTbStyle}"
                    Text="{Binding Month}"/>
-
-        <ListBox Grid.Row="1" Grid.Column="0" BorderThickness="0" Padding="0" HorizontalContentAlignment="Stretch"
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource ResidenceTitleTbStyle}"
+                   Text="{x:Static resx:Resource.ResidenceTitle}"/>
+          
+            <ListBox BorderThickness="0" Padding="0" Margin="5 0 5 0"
+                 HorizontalContentAlignment="Stretch"
                  ItemContainerStyle="{DynamicResource _ListBoxItemStyle}"
                    ItemTemplate="{StaticResource ResidenceControlTemplate}"
-                   ItemsSource="{Binding Residences}">
-        </ListBox>
-
+                   ItemsSource="{Binding Residences}" 
+                   SelectedItem="{Binding CurrentResidance}" >
+                <Behaviors:Interaction.Triggers>
+                    <Behaviors:EventTrigger EventName="SelectionChanged">
+                        <Behaviors:InvokeCommandAction Command="{Binding ResidanceChanged}"/>
+                    </Behaviors:EventTrigger>
+                    
+                </Behaviors:Interaction.Triggers>
+            </ListBox>
+        </StackPanel>
         <customControls:CustomCalendar Grid.Row="1" Grid.Column="1"
                                        Style="{StaticResource CustomCalendarStyle}"
             ItemTemplate="{StaticResource CalendarItemTemplate}"

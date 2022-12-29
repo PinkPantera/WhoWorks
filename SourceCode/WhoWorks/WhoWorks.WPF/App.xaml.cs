@@ -44,6 +44,7 @@ namespace WhoWorks.WPF
             await AppHost?.StartAsync();
 
             var startWindow = AppHost.Services.GetRequiredService<MainWindow>();
+            startWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             startWindow.DataContext = AppHost.Services.GetRequiredService<MainWindowViewModel>();
             startWindow.Show();
 

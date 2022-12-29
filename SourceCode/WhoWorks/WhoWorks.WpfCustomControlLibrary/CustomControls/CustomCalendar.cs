@@ -23,13 +23,12 @@ namespace WhoWorks.WpfCustomControlLibrary.CustomControls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomCalendar),
                 new FrameworkPropertyMetadata(typeof(CustomCalendar)));
-
-   }
+        }
 
         public CustomCalendar()
         {
             Headers = new List<DayOfWeek>();
-            for (int i= 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 Headers.Add(new(i, System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames[i + 1]));
             }

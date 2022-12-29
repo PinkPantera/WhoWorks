@@ -13,5 +13,9 @@
                  UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/ville-80.png"/>
     <BitmapImage x:Key="MainPageIcon"
                  UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/accueil-80.png"/>
+    <BitmapImage x:Key="ActivateDayWhiteIcon"
+                 UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/activateDay-50.png"/>
+    <BitmapImage x:Key="DaySettingsIcon"
+                 UriSource="pack://application:,,,/WhoWorks.WpfCustomControlLibrary;component/Resources/Icons/daySettings-50.png"/>
 
 </ResourceDictionary>

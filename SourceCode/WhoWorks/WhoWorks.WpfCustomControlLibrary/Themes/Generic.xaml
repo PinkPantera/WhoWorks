@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:buttons="clr-namespace:WhoWorks.WpfCustomControlLibrary.Buttons"
     xmlns:customControls="clr-namespace:WhoWorks.WpfCustomControlLibrary.CustomControls"
-    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:WhoWorks.WpfCustomControlLibrary">
 
     <Style x:Key="IconTextButtonStyle" TargetType="{x:Type buttons:IconTextButton}">
         <Setter Property="Template">
@@ -58,7 +59,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding ElementName=tbBody, Path=Text}" Value="{x:Static system:String.Empty}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
                 <Setter Property="Foreground" Value="Gray"/>
             </DataTrigger>
         </Style.Triggers>
@@ -69,8 +70,11 @@
         <Setter Property="Margin" Value="1"/>
         <Setter Property="Padding" Value="5"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding ElementName=tbBody, Path=Text}" Value="{x:Static system:String.Empty}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
                 <Setter Property="Background" Value="LightGray"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Understaffed}">
+                <Setter Property="Background" Value="#e3dcdd"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -81,18 +85,48 @@
         <Setter Property="Foreground" Value="#5783b3" />
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Arial Nova Light"/>
-        <Setter Property="Margin" Value="0 4 0 0"/>
+        <Setter Property="Margin" Value="0 0 0 0"/>
     </Style>
 
-
     <Style x:Key="PanelStyle" TargetType="StackPanel">
-        <Setter Property="Margin" Value="0 5 0 0"/>
+        <Setter Property="Margin" Value="0 0 0 0"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding ElementName=tbBody, Path=Text}" Value="{x:Static system:String.Empty}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled }">
                 <Setter Property="Visibility" Value="Hidden"/>
             </DataTrigger>
         </Style.Triggers>
 
+    </Style>
+
+    <Style x:Key="BtnActivateStyle" TargetType="{x:Type buttons:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
+        <Setter Property="TextVisibility" Value="Hidden"/>
+        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Padding" Value="3 0 3 0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#edca18"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BtnSettingsStyle" TargetType="{x:Type buttons:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
+        <Setter Property="TextVisibility" Value="Hidden"/>
+        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Padding" Value="3 0 3 0"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Completed}">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Understaffed}">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#edca18"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ItemCalendarStyle" TargetType="{x:Type customControls:CustomContentCalendar}">
@@ -100,10 +134,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type customControls:CustomContentCalendar}">
                     <Border Style="{StaticResource DayCalenderBorderStyle}" Height="110" >
-                        <StackPanel>
-                            <TextBlock Style="{StaticResource TitleTextDayCalandarTbStyle}" Text="{TemplateBinding Title}"/>
-                            <TextBlock Name="tbBody" Style="{StaticResource BodyTextDayCalandarTbStyle}" Text="{TemplateBinding Body}"/>
-                            <StackPanel Style="{StaticResource PanelStyle}" VerticalAlignment="Stretch">
+                        <DockPanel VerticalAlignment="Stretch">
+                            <TextBlock Style="{StaticResource TitleTextDayCalandarTbStyle}" Text="{TemplateBinding Title}"
+                                       DockPanel.Dock="Top"/>
+                            <TextBlock Name="tbBody" Style="{StaticResource BodyTextDayCalandarTbStyle}" Text="{TemplateBinding Body}"
+                                       DockPanel.Dock="Top" />
+                            <StackPanel Style="{StaticResource PanelStyle}" VerticalAlignment="Stretch" DockPanel.Dock="Top">
                                 <ItemsControl ItemsSource="{TemplateBinding Hours}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate >
@@ -122,8 +158,19 @@
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
+
                             </StackPanel>
-                        </StackPanel>
+                            
+                            <buttons:IconTextButton Style="{StaticResource BtnActivateStyle}" Width="27" Height="27"
+                                    IconSource="{DynamicResource ActivateDayWhiteIcon}" ToolTip="{x:Static local:Resource.ActivateDay}"
+                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
+                                    DockPanel.Dock="Bottom"/>
+
+                            <buttons:IconTextButton Style="{StaticResource BtnSettingsStyle}" Width="27" Height="27"
+                                    IconSource="{DynamicResource DaySettingsIcon}" ToolTip="{x:Static local:Resource.EditDay}"
+                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
+                                    DockPanel.Dock="Right"/>
+                        </DockPanel>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

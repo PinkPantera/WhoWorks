@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace WhoWorks.WPF.ViewModels
         private string month;
         private ResidenceModel currentResidance;
 
+
         public SchedulePageViewModel(IResidenceService residenceService, IScheduleService scheduleSevice)
             : base(PageType.Schedule)
         {
@@ -33,8 +35,8 @@ namespace WhoWorks.WPF.ViewModels
             this.scheduleSevice = scheduleSevice;
             Initialization = LoadPesidence();
             ResidanceChanged = new RalayCommand<object>(ResidanceChangedExecute);
+            ActivateDayCommand = new RalayCommand<object>(ActivateDayCommandExecute);
         }
-
 
         public ObservableCollection<Day> Days { get; private set; }
                 = new ObservableCollection<Day>();
@@ -42,6 +44,8 @@ namespace WhoWorks.WPF.ViewModels
                 = new ObservableCollection<ResidenceModel>();
 
         public ICommand ResidanceChanged { get; set; }
+        public ICommand ActivateDayCommand { get; set; }
+
         public ResidenceModel CurrentResidance
         {
             get
@@ -65,12 +69,27 @@ namespace WhoWorks.WPF.ViewModels
 
         public Task Initialization { get; }
 
+        #region Commands
         private void ResidanceChangedExecute(object obj)
         {
             if (CurrentResidance != null)
                 CreateMonth(DateTime.Now.Year, DateTime.Now.Month, CurrentResidance);
         }
+        private void ActivateDayCommandExecute(object obj)
+        {
+            var day = (Day)obj;
+            if (day == null)
+                return;
+            Day? dayToActivate = Days.FirstOrDefault(item => item.Date == day.Date);
 
+            if (dayToActivate != null)
+            {
+                dayToActivate.Content = currentResidance.Name;
+                dayToActivate.IdContent = currentResidance.Id;
+            }
+        }
+
+        #endregion
         private async Task LoadPesidence()
         {
             try
@@ -101,16 +120,23 @@ namespace WhoWorks.WPF.ViewModels
             for (int i = 1; i <= countdays; i++)
             {
                 var day = new DateOnly(year, month, i);
-
                 var dayOfWeek = (int)day.DayOfWeek;
-                //var tmp = list.Where(item => item.Date == day)
-                //     .Select(s =>
-                //        $"{s.Person.FirstName} {s.Person.SecondName}: {s.TimeBegin.ToString("HH.mm")} - {s.TimeEnd.ToString("HH.mm")}")
-                //     .DefaultIfEmpty()
-                //     .Aggregate((x, y) => x + "\n" + y);
 
+                var dayOfCalendar = new Day 
+                { 
+                    Date = day, 
+                    DayOfWeek = (dayOfWeek == 0 ? 7 : dayOfWeek) - 1, 
+                    NumberOfDay = i,
+                    WeekNo = week
+                };
 
-                var listHours = list.Where(item => item.Date == day)
+                var assignedDay = list.Where(item => item.Date == day);
+                List<AssignedHours> assignedHours;
+
+                if (assignedDay != null && assignedDay.Any())
+                {
+
+                    assignedHours = list.Where(item => item.Date == day && item.Person != null)
                                     .Select(s => new AssignedHours
                                     {
                                         Name = s.Person.FirstName,
@@ -118,27 +144,16 @@ namespace WhoWorks.WPF.ViewModels
                                         Id = s.Person.Id
                                     }).ToList();
 
-                Days.Add(new Day
-                {
-                    WeekNo = week,
-                    Date = day,
-                    DayOfWeek = (dayOfWeek == 0 ? 7 : dayOfWeek) - 1,
-                    Content = listHours.Count > 0 ? residenceModel.Name : default(string),
-                    NumberOfDay = i,
-                    Hours = listHours
-                });
+                    dayOfCalendar.IdContent = residenceModel.Id;
+                    dayOfCalendar.Content = residenceModel.Name;
+                    dayOfCalendar.Hours = assignedHours;
+                }
+
+                Days.Add(dayOfCalendar);
 
                 if (dayOfWeek == 0)
                     week++;
             }
-
-            //Days[9].Content = string.Empty;
-            //Days[6].Content = string.Empty;
-            //Days[15].Content = string.Empty;
-            //Days[16].Content = string.Empty;
-            //Days[22].Content = string.Empty;
-            //Days[11].Content = string.Empty;
-            //Days[12].Content = string.Empty;
         }
     }
 

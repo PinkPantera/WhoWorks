@@ -27,13 +27,13 @@ namespace ClientDataService.Services
 
         public Task<IList<ScheduleModel>> GetSchedulesResidanceByMonthAsync(int year, int month, int idResidance)
         {
-            IList< ScheduleModel> list = new List<ScheduleModel>();
+            IList<ScheduleModel> list = new List<ScheduleModel>();
             list.Add(new ScheduleModel
             {
                 Residence = new ResidenceModel { Id = 1 },
                 Date = new DateOnly(year, month, 29),
-                TimeBegin = new TimeOnly(8,0),
-                TimeEnd = new TimeOnly(19,0),
+                TimeBegin = new TimeOnly(8, 0),
+                TimeEnd = new TimeOnly(19, 0),
                 Person = new PersonModel { FirstName = "Cleary", SecondName = "Stephen" }
             });
             list.Add(new ScheduleModel
@@ -108,6 +108,14 @@ namespace ClientDataService.Services
                 TimeBegin = new TimeOnly(8, 0),
                 TimeEnd = new TimeOnly(19, 0),
                 Person = new PersonModel { FirstName = "Pichaud", SecondName = "Christophe" }
+            });
+            list.Add(new ScheduleModel
+            {
+                Residence = new ResidenceModel { Id = 1 },
+                Date = new DateOnly(year, month, 1),
+                TimeBegin = new TimeOnly(0, 0),
+                TimeEnd = new TimeOnly(0, 0),
+                Person = null
             });
 
             return Task.FromResult(list);

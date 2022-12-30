@@ -67,6 +67,8 @@
 
     <Style x:Key="DayCalenderBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="#ede7da"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="MinHeight" Value="120"/>
         <Setter Property="Margin" Value="1"/>
         <Setter Property="Padding" Value="5"/>
         <Style.Triggers>
@@ -100,7 +102,7 @@
 
     <Style x:Key="BtnActivateStyle" TargetType="{x:Type buttons:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
         <Setter Property="TextVisibility" Value="Hidden"/>
-        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="Padding" Value="3 0 3 0"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
@@ -114,7 +116,7 @@
 
     <Style x:Key="BtnSettingsStyle" TargetType="{x:Type buttons:IconTextButton}" BasedOn="{StaticResource IconTextButtonStyle}">
         <Setter Property="TextVisibility" Value="Hidden"/>
-        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="Padding" Value="3 0 3 0"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Completed}">
@@ -133,13 +135,27 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type customControls:CustomContentCalendar}">
-                    <Border Style="{StaticResource DayCalenderBorderStyle}" Height="110" >
-                        <DockPanel VerticalAlignment="Stretch">
+                    <Border Style="{StaticResource DayCalenderBorderStyle}" >
+                        <DockPanel LastChildFill="True">
                             <TextBlock Style="{StaticResource TitleTextDayCalandarTbStyle}" Text="{TemplateBinding Title}"
                                        DockPanel.Dock="Top"/>
-                            <TextBlock Name="tbBody" Style="{StaticResource BodyTextDayCalandarTbStyle}" Text="{TemplateBinding Body}"
-                                       DockPanel.Dock="Top" />
-                            <StackPanel Style="{StaticResource PanelStyle}" VerticalAlignment="Stretch" DockPanel.Dock="Top">
+
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Background="DimGray" HorizontalAlignment="Right">
+                                <buttons:IconTextButton Style="{StaticResource BtnActivateStyle}" Width="27" Height="27"
+                                    IconSource="{DynamicResource ActivateDayWhiteIcon}" ToolTip="{x:Static local:Resource.ActivateDay}"
+                                    Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
+                                    />
+
+                                <buttons:IconTextButton Style="{StaticResource BtnSettingsStyle}" Width="27" Height="27"
+                                    IconSource="{DynamicResource DaySettingsIcon}" ToolTip="{x:Static local:Resource.EditDay}"
+                                     Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
+                                   />
+                            </StackPanel>
+
+                            <StackPanel  Name="tbBody"  Style="{StaticResource PanelStyle}" Orientation="Vertical" > 
+                                
+                                <TextBlock Style="{StaticResource BodyTextDayCalandarTbStyle}" Text="{TemplateBinding Body}"/>
+
                                 <ItemsControl ItemsSource="{TemplateBinding Hours}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate >
@@ -158,18 +174,9 @@
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
-
                             </StackPanel>
-                            
-                            <buttons:IconTextButton Style="{StaticResource BtnActivateStyle}" Width="27" Height="27"
-                                    IconSource="{DynamicResource ActivateDayWhiteIcon}" ToolTip="{x:Static local:Resource.ActivateDay}"
-                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
-                                    DockPanel.Dock="Bottom"/>
 
-                            <buttons:IconTextButton Style="{StaticResource BtnSettingsStyle}" Width="27" Height="27"
-                                    IconSource="{DynamicResource DaySettingsIcon}" ToolTip="{x:Static local:Resource.EditDay}"
-                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
-                                    DockPanel.Dock="Right"/>
+
                         </DockPanel>
                     </Border>
                 </ControlTemplate>

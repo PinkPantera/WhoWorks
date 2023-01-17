@@ -11,8 +11,9 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <customControls:CustomContentCalendar Style="{StaticResource ItemCalendarStyle}"
                 Title="{Binding NumberOfDay}" Body="{Binding Content}" Hours="{Binding Hours}"
-                ActivateDayCommand="{Binding DataContext.ActivateDayCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                                                  CommandParameter="{Binding}"/>
+                EditDayCommand="{Binding DataContext.EditDayCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                CommandParameter="{Binding}"
+                                                  />
         </StackPanel>
     </DataTemplate>
 

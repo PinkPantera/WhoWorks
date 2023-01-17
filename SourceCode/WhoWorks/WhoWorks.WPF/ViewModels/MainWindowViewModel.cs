@@ -41,12 +41,12 @@ namespace WhoWorks.WPF.ViewModels
                 return;
 
             SelectedPage = pageProvider.GetPage(pageType);
-            var pageWithAsyncInitialization = SelectedPage as IAsyncInitialization;
+            var pageWithAsyncInitialization = SelectedPage as IInitialization;
 
             if (pageWithAsyncInitialization != null
-                && pageWithAsyncInitialization.Initialization != null)
+                && pageWithAsyncInitialization.InitializationAsync != null)
             {
-                await pageWithAsyncInitialization.Initialization;
+                await pageWithAsyncInitialization.InitializationAsync;
             }
         }
 

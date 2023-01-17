@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WhoWorks.WPF.Common;
 
 namespace WhoWorks.WPF.Interfaces
 {
-    internal interface IAsyncInitialization
+    public interface IClosable
     {
-        Task Initialization { get; }
+        event EventHandler<DialogCloseEventArgs> CloseRequested;
+        bool CanClose();
     }
 }

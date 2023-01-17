@@ -6,6 +6,7 @@ using System;
 using System.Windows;
 using WhoWorks.WPF.ApiSettings;
 using WhoWorks.WPF.Interfaces;
+using WhoWorks.WPF.Providers;
 using WhoWorks.WPF.StartupHelpers;
 using WhoWorks.WPF.ViewModels;
 using WhoWorks.WPF.Views;
@@ -29,6 +30,7 @@ namespace WhoWorks.WPF
                 services.AddSingleton<IWebApiSettings, WebApiSettings>();
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
+                services.AddSingleton<IDialogService, DialogProvider>();
                 services.AddPageProvider();
                 services.AddScoped<IPersonService, PersonService>();
                 services.AddScoped<IResidenceService, ResidenceService>();

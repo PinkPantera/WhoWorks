@@ -59,7 +59,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.NotActive}">
                 <Setter Property="Foreground" Value="Gray"/>
             </DataTrigger>
         </Style.Triggers>
@@ -68,15 +68,17 @@
     <Style x:Key="DayCalenderBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="#ede7da"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="MinHeight" Value="120"/>
         <Setter Property="Margin" Value="1"/>
         <Setter Property="Padding" Value="5"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.NotActive}">
                 <Setter Property="Background" Value="LightGray"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Understaffed}">
                 <Setter Property="Background" Value="#e3dcdd"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
+                <Setter Property="Background" Value="DarkGray"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -93,7 +95,7 @@
     <Style x:Key="PanelStyle" TargetType="StackPanel">
         <Setter Property="Margin" Value="0 0 0 0"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled }">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.NotActive }">
                 <Setter Property="Visibility" Value="Hidden"/>
             </DataTrigger>
         </Style.Triggers>
@@ -105,7 +107,7 @@
         <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="Padding" Value="3 0 3 0"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.Disabled}">
+            <DataTrigger Binding="{Binding Path=State}" Value="{x:Static customControls:StateOfDay.NotActive}">
                 <Setter Property="Visibility" Value="Visible"/>
             </DataTrigger>
             <Trigger Property="IsMouseOver" Value="True">
@@ -140,20 +142,17 @@
                             <TextBlock Style="{StaticResource TitleTextDayCalandarTbStyle}" Text="{TemplateBinding Title}"
                                        DockPanel.Dock="Top"/>
 
-                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Background="DimGray" HorizontalAlignment="Right">
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" MinHeight="27">
                                 <buttons:IconTextButton Style="{StaticResource BtnActivateStyle}" Width="27" Height="27"
                                     IconSource="{DynamicResource ActivateDayWhiteIcon}" ToolTip="{x:Static local:Resource.ActivateDay}"
-                                    Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
-                                    />
+                                    Command="{TemplateBinding EditDayCommand}" CommandParameter="{Binding}" />
 
                                 <buttons:IconTextButton Style="{StaticResource BtnSettingsStyle}" Width="27" Height="27"
                                     IconSource="{DynamicResource DaySettingsIcon}" ToolTip="{x:Static local:Resource.EditDay}"
-                                     Command="{TemplateBinding ActivateDayCommand}" CommandParameter="{Binding}"
-                                   />
+                                    Command="{TemplateBinding EditDayCommand}" CommandParameter="{Binding}"/>
                             </StackPanel>
 
-                            <StackPanel  Name="tbBody"  Style="{StaticResource PanelStyle}" Orientation="Vertical" > 
-                                
+                            <StackPanel Style="{StaticResource PanelStyle}" Orientation="Vertical"  MinHeight="65"> 
                                 <TextBlock Style="{StaticResource BodyTextDayCalandarTbStyle}" Text="{TemplateBinding Body}"/>
 
                                 <ItemsControl ItemsSource="{TemplateBinding Hours}">

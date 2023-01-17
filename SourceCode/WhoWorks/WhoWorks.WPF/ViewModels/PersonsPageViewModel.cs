@@ -12,7 +12,7 @@ using WhoWorks.WPF.Interfaces;
 
 namespace WhoWorks.WPF.ViewModels
 {
-    public class PersonsPageViewModel : ViewModelBasePage, IAsyncInitialization
+    public class PersonsPageViewModel : ViewModelBasePage, IInitialization
     {
         private readonly IPersonService personService;
         private string errorInformation;
@@ -21,14 +21,15 @@ namespace WhoWorks.WPF.ViewModels
            : base(PageType.Persons)
         {
             this.personService = personService;
-            Initialization = LoadPersons();
+            InitializationAsync = LoadPersons();
         }
 
         public ObservableCollection<PersonModel> Persons { get; private set; } 
             = new ObservableCollection<PersonModel>();
 
 
-        public Task Initialization { get; }
+        public Task InitializationAsync { get; }
+
         public string ErrorInformation
         {
             get => errorInformation; 

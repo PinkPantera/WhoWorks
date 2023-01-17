@@ -18,8 +18,8 @@ namespace WhoWorks.WpfCustomControlLibrary.CustomControls
            DependencyProperty.Register(nameof(Body), typeof(string), typeof(CustomContentCalendar));
         public static readonly DependencyProperty HoursProperty =
           DependencyProperty.Register(nameof(Hours), typeof(List<AssignedHours>), typeof(CustomContentCalendar));
-        public static readonly DependencyProperty ActivateDayCommandProperty = 
-            DependencyProperty.Register(nameof(ActivateDayCommand), typeof(ICommand), typeof(CustomContentCalendar), null);
+        public static readonly DependencyProperty EditDayCommandProperty = 
+            DependencyProperty.Register(nameof(EditDayCommand), typeof(ICommand), typeof(CustomContentCalendar), null);
         public static readonly DependencyProperty CommandParameterProperty = 
             DependencyProperty.Register("CommandParameter", typeof(object), typeof(CustomContentCalendar), null);
 
@@ -44,15 +44,15 @@ namespace WhoWorks.WpfCustomControlLibrary.CustomControls
             get { return (List<AssignedHours>)GetValue(HoursProperty); }
             set { SetValue(HoursProperty, value); }
         }
-        public ICommand ActivateDayCommand
+        public ICommand EditDayCommand
         {
             get
             {
-                return (ICommand)GetValue(ActivateDayCommandProperty);
+                return (ICommand)GetValue(EditDayCommandProperty);
             }
             set
             {
-                SetValue(ActivateDayCommandProperty, value);
+                SetValue(EditDayCommandProperty, value);
             }
         }
         public object CommandParameter

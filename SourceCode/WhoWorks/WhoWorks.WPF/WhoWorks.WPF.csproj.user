@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\EditDayDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\EmptyPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resources\DataSourceTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditDayDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EmptyPageView.xaml">

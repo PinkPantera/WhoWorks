@@ -13,6 +13,7 @@ namespace WhoWorks.WPF.StartupHelpers
 {
     public delegate IPage ServicePageResolver(PageType pageType);
 
+
     public static class ServiceExtentions
     {
         public static void AddPageProvider(this IServiceCollection services)

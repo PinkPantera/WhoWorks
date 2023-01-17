@@ -18,24 +18,27 @@ using WhoWorks.WpfCustomControlLibrary.CustomControls;
 
 namespace WhoWorks.WPF.ViewModels
 {
-    public class SchedulePageViewModel : ViewModelBasePage, IAsyncInitialization
+    public class SchedulePageViewModel : ViewModelBasePage, IInitialization
     {
         private readonly IResidenceService residenceService;
         private readonly IScheduleService scheduleSevice;
+        private readonly IDialogService dialogService;
         private string month;
         private ResidenceModel currentResidance;
 
 
-        public SchedulePageViewModel(IResidenceService residenceService, IScheduleService scheduleSevice)
+        public SchedulePageViewModel(IResidenceService residenceService, 
+            IScheduleService scheduleSevice, IDialogService dialogService)
             : base(PageType.Schedule)
         {
             Month = DateTime.Now.ToString("MMMM yyyy");
 
             this.residenceService = residenceService;
             this.scheduleSevice = scheduleSevice;
-            Initialization = LoadPesidence();
+            this.dialogService = dialogService;
+            InitializationAsync = LoadPesidence();
             ResidanceChanged = new RalayCommand<object>(ResidanceChangedExecute);
-            ActivateDayCommand = new RalayCommand<object>(ActivateDayCommandExecute);
+            EditDayCommand = new RalayCommand<object>(EditDayCommandExecute);
         }
 
         public ObservableCollection<Day> Days { get; private set; }
@@ -44,8 +47,7 @@ namespace WhoWorks.WPF.ViewModels
                 = new ObservableCollection<ResidenceModel>();
 
         public ICommand ResidanceChanged { get; set; }
-        public ICommand ActivateDayCommand { get; set; }
-
+        public ICommand EditDayCommand { get; set; }
         public ResidenceModel CurrentResidance
         {
             get
@@ -67,7 +69,7 @@ namespace WhoWorks.WPF.ViewModels
             }
         }
 
-        public Task Initialization { get; }
+        public Task InitializationAsync { get; }
 
         #region Commands
         private void ResidanceChangedExecute(object obj)
@@ -75,11 +77,20 @@ namespace WhoWorks.WPF.ViewModels
             if (CurrentResidance != null)
                 CreateMonth(DateTime.Now.Year, DateTime.Now.Month, CurrentResidance);
         }
-        private void ActivateDayCommandExecute(object obj)
+        private void EditDayCommandExecute(object obj)
         {
             var day = (Day)obj;
             if (day == null)
                 return;
+            if (day.State == StateOfDay.NotActive)
+            {
+                ActivateDay(day);
+            }
+           var result =  dialogService.ShowDialog<EditDayViewModel>(day);
+        }
+
+        private void ActivateDay(Day day)
+        {
             Day? dayToActivate = Days.FirstOrDefault(item => item.Date == day.Date);
 
             if (dayToActivate != null)

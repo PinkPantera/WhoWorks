@@ -9,6 +9,7 @@ namespace WhoWorks.WpfCustomControlLibrary.CustomControls
     public enum StateOfDay
     {
         Disabled = 0,
+        NotActive,
         Understaffed,
         Completed
     }

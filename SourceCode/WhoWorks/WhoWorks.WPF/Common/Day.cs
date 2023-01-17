@@ -20,19 +20,21 @@ namespace WhoWorks.WPF.Common
         {
             get
             {
-                if (IdContent == 0)
+                if (dayOfWeek == 6)
                     return StateOfDay.Disabled;
+                if (IdContent == 0)
+                    return StateOfDay.NotActive;
                 if (Hours == null || Hours.Count == 0)
                     return StateOfDay.Understaffed;
                 return StateOfDay.Completed;
             }
         }
-        public int IdContent 
+        public int IdContent
         {
             get => idContent;
             set
             {
-               if ( SetProprty(ref idContent, value))
+                if (SetProprty(ref idContent, value))
                 {
                     OnPropertyChanged(nameof(State));
                 }
